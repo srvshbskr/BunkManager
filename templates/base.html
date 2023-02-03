@@ -12,7 +12,15 @@
     <nav class="navbar">
         <div><h3>Bunkmgr</h3></div>
         <div>
-            <a href="" id="login" class="link"> Login</a>
+            {% if user.is_authenticated %}
+            <div class="row">
+
+            <p class="dull">Hello,{{user.username}}</p>
+            <a href={% url 'logout' %} class="link">Logout</a>
+            
+
+            </div>
+            {% endif %}
 
         </div>
     </nav>

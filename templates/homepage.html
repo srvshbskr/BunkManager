@@ -3,7 +3,7 @@
 <div class="container">
   <h2>Welcome to Bunkmgr</h2>
   {% if user.is_authenticated %}
-  <a href="" class="link">View report</a>
+  <a href={% url 'report' %} class="link">View report</a>
   {% else %} 
     <a href={% url 'signup' %} class="link">Login</a>
   {% endif %}

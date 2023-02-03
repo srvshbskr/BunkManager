@@ -13,6 +13,13 @@
 
 }
 
+.row{
+
+    display: flex;
+    align-items: center;
+    gap: 1.3em;
+}
+
 a{
     text-decoration: none;
     color: var(--font-color);
@@ -43,8 +50,15 @@ body{
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     
+}
+
+.dull{
+
+    opacity: 60%;
+    font-size: 1.1em;
+
 }
 /* ==================================================================================================--Home--=================================================================================================== */
 
@@ -73,8 +87,18 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.login-form{
+    position: relative;
+    width: 20%;
+    left: 38%;
+    top: 25vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
-.row{
+.form-row{
     width: 100%;
     display: flex;
     gap: 2em;
@@ -86,7 +110,7 @@ body{
 .btn{
 
     padding: 1.1em 2em;
-    margin-top: 20%;
+    margin-top: 10%;
     color: var(--font-color);
     background-color: var(--secondary-color);
     border: none;
@@ -109,3 +133,58 @@ body{
 
 }
 
+.flash{
+
+    position: absolute;
+    top: 70vh;
+    right: 45vw;
+
+}
+
+.message{
+
+    background-color: #252525;
+    padding: 1.2em;
+    border-radius: 10px;
+
+}
+
+/* ==================================================================================================--Report--=================================================================================================== */
+
+.report-container{
+
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    row-gap: 10px;
+
+}
+
+.cards{
+
+    background-color: var(--secondary-color);
+    height: 10%;
+    width: 80%;
+
+}
+
+.cardl{
+
+    
+    background-color: var(--secondary-color);
+    height: 80%;
+    width: 80%;
+
+}
+
+@media screen and (max-width:768px) {
+    
+    .report-container{
+
+        display: grid;
+        grid-template-rows: 1fr none;
+    }
+
+}

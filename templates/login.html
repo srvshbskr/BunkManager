@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="POST" class="login-form">
+        <h3 class="title">Login</h3>
+        {% csrf_token %}
+        
+        <div class="form-row">
+            <label for="username">Username</label>
+            <input type="text" class="form-field" name="username">
+        </div>
+
+        <div class="form-row">
+            <label for="Password">Password</label>
+            <input type="Password" class="form-field"name="Password">
+        </div>
+
+        <input type="submit" class="btn" value="submit">
+    </form>
+
+    <div class="flash">
+
+    {% for message in messages %}
+
+            <p class="message">
+
+            {{message}}
+
+
+            </p>
+        
+        {% endfor %}
+        
+
+    </div>
+
+{% endblock content %}
