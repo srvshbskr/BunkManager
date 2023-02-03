@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        {% for field in form  %}
+        
+        <div class="row">
+
+            <div class="label">{{field.label}}</div>
+            {{field}}
+        </div>
+
+        {% endfor %}
+        <input type="submit" class="btn" value="submit">
+    </form>
+
+    <div class="flash">
+
+        {{form.errors}}
+        
+
+    </div>
+
+{% endblock content %}

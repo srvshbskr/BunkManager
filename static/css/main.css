@@ -4,10 +4,12 @@
 }
 
 
+
 :root{
 
     --primary-color:#0b0b0b;
     --font-color:white;
+    --secondary-color:rgb(102, 117, 255);
 
 }
 
@@ -27,20 +29,83 @@ body{
 
 }
 
-/* ==================================================================================================--Navbar--=================================================================================================== */
 
+
+.link{
+    
+    color: rgb(23, 255, 255);
+    font-size: 1.2em;
+    
+}
+/* ==================================================================================================--Navbar--=================================================================================================== */
 
 .navbar{
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
 }
+/* ==================================================================================================--Home--=================================================================================================== */
 
-.home-container{
+.container{
 
-    height: 90vh;
+    /* height: 90vh; */
+    /* width: 100vw; */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 30vh;
 
 }
+
+/* ==================================================================================================--Forms--=================================================================================================== */
+
+.form{
+    position: relative;
+    width: 25%;
+    left: 38%;
+    top: 25vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    margin-top: 10%;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.btn{
+
+    padding: 1.1em 2em;
+    margin-top: 20%;
+    color: var(--font-color);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 15px;
+
+}
+
+.form-field{
+
+    background-color: #252525;
+    border: none;
+    border-radius: 10px;
+    color: var(--font-color);
+    padding: 1.2rem 1em;
+}
+
+.form-field:focus{
+
+    outline: none;
+
+}
+
