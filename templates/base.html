@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bunkmgr</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
+    <nav class="navbar">
+        <h3>Bunkmgr</h3>
+        <a href="" id="login" class="link"> Login</a>
+    </nav>
     
     {% block content %}
     
+    <div class="home-container">
+
+        <div class="text">Hi</div>
+
+    </div>
     
     {% endblock content %}
 

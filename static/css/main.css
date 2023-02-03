@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'p';
+    src: url('/static/fonts/Poppins-Regular.ttf');
+}
+
+
+:root{
+
+    --primary-color:#0b0b0b;
+    --font-color:white;
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+    opacity: 60%;
+
+}
+
+body{
+
+    background-color: var(--primary-color);
+    font-family: 'p';
+    color: var(--font-color);
+    margin: 0 5vw;
+
+}
+
+/* ==================================================================================================--Navbar--=================================================================================================== */
+
+
+.navbar{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.home-container{
+
+    height: 90vh;
+    position: relative;
+
+}
