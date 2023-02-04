@@ -1,14 +1,71 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-{% block content %}
-
-    <div class="report-container">
-
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cardl"></div>
-        <div class="cardl"></div>
-
+<div class="report-wrapper">
+  <div class="left">
+    <div class="small">
+      <div class="header-row">
+        <div class="para"><p class="date">Mon , 12 Nov</p></div>
+        <div class="search">
+          <img src={% static '/images/Search.svg' %} alt="" class="icon">
+          <p>Search</p>
+        </div>
+      </div>
     </div>
+    <div class="left-large">
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Hour 1</th>
+          <th>Hour 2</th>
+          <th>Hour 3</th>
+          <th>Hour 4</th>
+          <th>Hour 5</th>
+          <th>Hour 6</th>
+          <th>Hour 7</th>
+          <th>Hour 8</th>
+        </tr>
+        <tbody>
+          <tr>
+            <td>12 Oct</td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+            <td><div class="circle"></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-small">
+      <div class="header-row">
+        <div class="row">
+          <div class="result">Your current percentage is</div>
+          <strong>75%</strong>
+        </div>
+      </div>
+    </div>
+    <div class="large">
+      <div class="column">
+        <div class="half-row">
+          <div class="result">Total hours</div>
+          <strong>234</strong>
+        </div>
+        <div class="half-row">
+          <div class="result">Totals hours present</div>
+          <strong>75</strong>
+        </div>
+        <div class="half-row">
+          <div class="result">Totals hours absent</div>
+          <strong>159</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
