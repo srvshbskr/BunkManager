@@ -1,9 +1,17 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth import get_user_model
 
-class Student(models.Model):
+User = get_user_model()
 
-    def __str__(self):
-        pass
+class Record(models.Model):
+    user = models.OneToOneField(User,  on_delete=models.CASCADE)
+    day = models.DateField(auto_now=False, auto_now_add=False)
+    hour1 = models.BooleanField(default=False)
+    hour2 = models.BooleanField(default=False)
+    hour3 = models.BooleanField(default=False)
+    hour4 = models.BooleanField(default=False)
+    hour5 = models.BooleanField(default=False)
+    hour6 = models.BooleanField(default=False)
+    hour7 = models.BooleanField(default=False)
+    hour8 = models.BooleanField(default=False)
     
-    register_no = models.IntegerField()

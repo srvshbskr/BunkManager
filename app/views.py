@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
-from .forms import CreateUserForm
+from .forms import CreateUserForm,createRecordForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def homepage(request):
@@ -43,6 +44,7 @@ def logoutpage(request):
     logout(request)
     return redirect('login')    
 
+@login_required(login_url='login')
 def reportpage(request):
     
     context = {}
