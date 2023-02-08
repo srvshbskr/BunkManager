@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class Record(models.Model):
-    user = models.OneToOneField(User,  on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
     day = models.DateField(auto_now=False, auto_now_add=False)
     hour1 = models.BooleanField(default=False)
     hour2 = models.BooleanField(default=False)

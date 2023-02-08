@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import CreateUserForm,createRecordForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,permission_required
 
 
 def homepage(request):
@@ -36,7 +36,6 @@ def loginpage(request):
             messages.info(request,'invalid credentials')
     context ={}
     return render(request,'login.html',context)
-    return render(request,'signuppage.html',context)
 
 
 def logoutpage(request):
@@ -49,3 +48,19 @@ def reportpage(request):
     
     context = {}
     return render(request,'report.html',context)
+
+def createrecordpage(request):
+
+    form = createRecordForm()
+
+
+    if request.method == 'POST':
+        form = createRecordForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('createrecord')
+        else:
+            messages.info(request,'invalid Details')
+    context = {'form':form}
+
+    return render(request,'createrecordpage.html',context)

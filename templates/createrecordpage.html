@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% block content %} <form action="" method="POST" class="create-form">
+    <div class="form-top"><a href={% url 'home' %} class="link">Go back</a>
+        <h3 class="title">Enter Attendance</h3>
+    </div>
+    {% csrf_token %}
+    {% for field in form  %}
+    
+    <div class="form-row">
+
+        <div class="label">{{field.label}}</div>
+        {{field}}
+    </div>
+
+    {% endfor %}
+    <input type="submit" class="btn" value="submit">
+</form>
+
+<div class="record-flash">
+
+    {{form.errors}}
+    
+
+</div>{% endblock content%}
