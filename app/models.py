@@ -14,4 +14,9 @@ class Record(models.Model):
     hour6 = models.BooleanField(default=False)
     hour7 = models.BooleanField(default=False)
     hour8 = models.BooleanField(default=False)
+
+    def __str__(self):
+        s = str(self.user.username) + '-'+ str(self.day.month) +'/' + str(self.day.day)
+        return s
+    
     

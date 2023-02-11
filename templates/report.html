@@ -4,7 +4,7 @@
   <div class="left">
     <div class="small">
       <div class="header-row">
-        <div class="para"><p class="date">Mon , 12 Nov</p></div>
+        <div class="para"><p class="date">{{d}}</p></div>
         <div class="search">
           <img src={% static '/images/Search.svg' %} alt="" class="icon">
           <p>Search</p>
@@ -25,17 +25,60 @@
           <th>Hour 8</th>
         </tr>
         <tbody>
+          {%for i in list%}
           <tr>
-            <td>12 Oct</td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
-            <td><div class="circle"></div></td>
+            <td>{{i.day|date:'d M'}}</td>
+            {% if i.hour1 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour2 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour3 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour4 == True %}
+          
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour5 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour6 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour7 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
+            {% if i.hour8 == True %}
+            
+            <td><div class="circle-green"></div></td>
+            {% else %}
+            <td><div class="circle-red"></div></td>
+            {% endif %}            
           </tr>
+
+          {%endfor%}
         </tbody>
       </table>
     </div>
@@ -45,7 +88,7 @@
       <div class="header-row">
         <div class="row">
           <div class="result">Your current percentage is</div>
-          <strong>75%</strong>
+          <strong>{{pe}}%</strong>
         </div>
       </div>
     </div>
@@ -53,15 +96,15 @@
       <div class="column">
         <div class="half-row">
           <div class="result">Total hours</div>
-          <strong>234</strong>
+          <strong>{{t}}</strong>
         </div>
         <div class="half-row">
           <div class="result">Totals hours present</div>
-          <strong>75</strong>
+          <strong>{{p}}</strong>
         </div>
         <div class="half-row">
           <div class="result">Totals hours absent</div>
-          <strong>159</strong>
+          <strong>{{a}}</strong>
         </div>
       </div>
     </div>

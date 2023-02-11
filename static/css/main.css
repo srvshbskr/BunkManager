@@ -316,12 +316,23 @@ body{
     transform: translateY(20px);
 }
 
-.circle{
+.circle-red{
 
     height: 30px;
     width: 30px;
     border-radius: 15px;
-    background-color: var(--circle-primary);
+    background-color: var(--circle-absent);
+    
+
+}
+
+.circle-green{
+
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: var(--circle-present);
+
 
 }
 
