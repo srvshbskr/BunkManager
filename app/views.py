@@ -3,8 +3,7 @@ from .forms import CreateUserForm,createRecordForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,permission_required
-from .models import *
-import datetime
+from .models import Record
 
 def homepage(request):
 
@@ -46,46 +45,48 @@ def logoutpage(request):
 
 @login_required(login_url='login')
 def reportpage(request):
-    reports = Record.objects.filter(user = request.user)
-    attended = 0
-    absent = 0
-    total = len(reports)*8
-    for i in reports:
+    r = Record.objects.filter(user =request.user)
+    p =0
+    a = 0
+    t = 0
+    for i in r :
+        t += 8
         if i.hour1:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour2:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour3:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour4:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour5:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour6:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour7:
-            attended +=1
+            p +=1
         else:
-            absent +=1
+            a+=1
         if i.hour8:
-            attended +=1
+            p +=1
         else:
-            absent +=1
-    percentage = attended/total *100
-    percentage =str(percentage)
-    context = {'list':reports,'t':total,'p':attended,'a':absent,'pe':percentage[0:5]}
+            a+=1
+
+        per = p/t *100
+
+    context = {'list':r,'t':t,'a':a,'p':p}
     return render(request,'report.html',context)
 
 def createrecordpage(request):
@@ -97,11 +98,10 @@ def createrecordpage(request):
         form = createRecordForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request,'record added')
-            return redirect('report')
-            
+            return redirect('createrecord')
         else:
             messages.info(request,'invalid Details')
     context = {'form':form}
 
     return render(request,'createrecordpage.html',context)
+
