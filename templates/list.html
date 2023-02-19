@@ -1,14 +1,13 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-
-    <div class="wrapper-list">
-
-        {% for i in l %}
-        {{i}}
-        
-        {% endfor %}
-
-    </div>
+<div class="wrapper-list">
+  {% for i,j in pt.items %}
+  <div class="row">
+    <div class="name">{{i}}</div>
+    <div class="percentage-red">{{j}}</div>
+    <div class="percentage-green">{{j}}</div>
+</div>
+  {% endfor %}
+</div>
 
 {% endblock content %}

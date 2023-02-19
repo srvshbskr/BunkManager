@@ -19,7 +19,7 @@
             <a href={% url 'logout' %} class="link">Logout</a>
             {% if user.is_staff %}
             <a href={% url 'createrecord' %} class="link">Enter attendance</a>
-            {% comment %} <a href={% url 'list' %} class="link">View list of users</a> {% endcomment %}
+            <a href={% url 'list' %} class="link">View list of users</a>
             
             {% else %}
             

@@ -177,8 +177,10 @@ body{
 .flash{
 
     position: absolute;
-    top: 70vh;
-    right: 45vw;
+    top: 80vh;
+    right: 5vw;
+    background-color: var(--card-color);
+    border-radius: 20px;
 
 }
 
