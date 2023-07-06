@@ -2,10 +2,13 @@
 
 <div class="wrapper-list">
   {% for i,j in pt.items %}
-  <div class="row">
+  <div class="list-row">
     <div class="name">{{i}}</div>
+    {% if j < 75 %}
     <div class="percentage-red">{{j}}</div>
+    {% else %}
     <div class="percentage-green">{{j}}</div>
+    {% endif %}
 </div>
   {% endfor %}
 </div>
