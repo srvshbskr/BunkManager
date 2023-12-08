@@ -16,7 +16,7 @@ This is a web application developed in Django that allows teachers to efficientl
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/college-attendance-app.git`
+1. Clone the repository: `https://github.com/srvshbskr/BunkManager.git`
 2. Navigate to the project directory.
 3. Install dependencies: `pip install -r requirements.txt`
 4. Run migrations: `python manage.py migrate`
@@ -32,9 +32,6 @@ This is a web application developed in Django that allows teachers to efficientl
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
